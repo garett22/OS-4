@@ -1,10 +1,8 @@
 ﻿import java.util.ArrayList;
 
 public class LRU{
-	// TODO usuń najdłużej nieużywaną
 	ArrayList<Strona> ramki=new ArrayList<>();
 	int size;
-	// int zegar=0;
 	int err=0; // licznik błędów stron
 
 	LRU(int size){ // przekaż ile ramek ma być

@@ -1,8 +1,8 @@
 ﻿import java.util.ArrayList;
 
-public class Proces{
+public class Proces implements Comparable<Proces>{
 	int ramki=0; // liczba przydzielonych ramek
-	ArrayList<Integer> arr=new ArrayList<>();
+	ArrayList<Integer> arr=new ArrayList<>(); // kolejne odwołania
 	LRU cpu;
 
 	Proces(int ramki,int n,int zakres){
@@ -35,4 +35,19 @@ public class Proces{
 			arr.remove(0);
 		}
 	}
+
+	@Override
+	public int compareTo(Proces o){
+		return ((Integer)cpu.err).compareTo(o.cpu.err);
+	}
+
+	int ramki(int ramki){
+		int n=this.ramki-ramki;
+		this.ramki=ramki;
+		cpu.size=ramki;
+		// jeśli zmniejszamy, to usuwamy z pamięci nadmiarowe ramki
+		for(int i=ramki;i<cpu.ramki.size();i++)
+			cpu.ramki.remove(ramki);
+	return n;
+	}	
 }
