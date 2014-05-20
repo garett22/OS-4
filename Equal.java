@@ -12,6 +12,7 @@ public class Equal{
 
 	void wykonaj(){
 		for(int i=0;i<procesy.size();i++)
-			procesy.get(i).wykonaj();
+			while(!procesy.get(i).arr.isEmpty())
+				procesy.get(i).wykonaj();
 	}
 }
