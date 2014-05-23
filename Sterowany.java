@@ -7,10 +7,13 @@ public class Sterowany{
 
 	Sterowany(int ramki,int n,int minLen,int maxLen,int minRan,int maxRan){
 		this.ramki=ramki;
-		for(int i=0;i<n;i++)
+		for(int i=0;i<n;i++){
 			procesy.add(new Proces((ramki/n),(int)(Math.random()
 					*(maxLen-minLen)+minLen),(int)(Math.random()
 					*(maxRan-minRan)+minRan)));
+			err.add(0); // inicjalizacja listy zapisanych błędów
+		}
+		
 	}
 
 	void wykonaj(){
