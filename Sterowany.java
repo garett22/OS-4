@@ -5,15 +5,18 @@ public class Sterowany{
 	ArrayList<Integer> err=new ArrayList<>();
 	int ramki=0;
 
-	Sterowany(int ramki,int n,int minLen,int maxLen,int minRan,int maxRan){
+	Sterowany(int ramki,ArrayList<Integer> len,ArrayList<Integer> ran){
 		this.ramki=ramki;
+		int n=len.size();
+		long suma=0;
+		for(int i=0;i<n;i++)
+			suma+=len.get(i)*ran.get(i);
+		// wstępny przydział ramek proporcjonalny
 		for(int i=0;i<n;i++){
-			procesy.add(new Proces((ramki/n),(int)(Math.random()
-					*(maxLen-minLen)+minLen),(int)(Math.random()
-					*(maxRan-minRan)+minRan)));
+			procesy.add(new Proces((int)((len.get(i)*ran.get(i))/suma)*ramki,
+					len.get(i),ran.get(i)));
 			err.add(0); // inicjalizacja listy zapisanych błędów
-		}
-		
+		}		
 	}
 
 	void wykonaj(){

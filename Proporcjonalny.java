@@ -3,17 +3,14 @@
 public class Proporcjonalny{
 	ArrayList<Proces> procesy=new ArrayList<>();
 
-	Proporcjonalny(int ramki,int n,int minLen,int maxLen,int minRan,int maxRan){
-		int[][] t=new int[2][n];
-		int suma=0;
-		for(int i=0;i<n;i++){
-			t[0][i]=(int)(Math.random()*(maxLen-minLen)+minLen);
-			t[1][i]=(int)(Math.random()*(maxRan-minRan)+minRan);
-			suma+=(t[0][i]*t[1][i])/100;
-		}
+	Proporcjonalny(int ramki,ArrayList<Integer> len,ArrayList<Integer> ran){
+		int n=len.size();
+		long suma=0;
 		for(int i=0;i<n;i++)
-			procesy.add(new Proces((int)((t[0][i]*t[1][i])/100/suma)*ramki,
-					t[0][i],t[1][i]));
+			suma+=len.get(i)*ran.get(i);
+		for(int i=0;i<n;i++)
+			procesy.add(new Proces((int)((len.get(i)*ran.get(i))/suma)*ramki,
+					len.get(i),ran.get(i)));
 	}
 
 	void wykonaj(){

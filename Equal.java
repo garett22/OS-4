@@ -3,11 +3,10 @@
 public class Equal{
 	ArrayList<Proces> procesy=new ArrayList<>();
 
-	Equal(int ramki,int n,int minLen,int maxLen,int minRan,int maxRan){
+	Equal(int ramki,ArrayList<Integer> len,ArrayList<Integer> ran){
+		int n=len.size();
 		for(int i=0;i<n;i++)
-			procesy.add(new Proces((ramki/n),(int)(Math.random()
-					*(maxLen-minLen)+minLen),(int)(Math.random()
-					*(maxRan-minRan)+minRan)));
+			procesy.add(new Proces((ramki/n),len.get(i),ran.get(i)));
 	}
 
 	void wykonaj(){
