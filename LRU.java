@@ -22,4 +22,8 @@ public class LRU{
 			ramki.add(new Strona(val)); // i dodaj na koniec
 		}
 	}
+
+	public String toString(){
+		return "["+err+"]";
+	}
 }

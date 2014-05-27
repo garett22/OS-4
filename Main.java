@@ -44,8 +44,19 @@ public class Main{
 
 		System.out.println("\n\nBłędy strony:");
 		System.out.println("Równy: "+err(e.procesy));
+		for(Proces x:e.procesy)
+			System.out.print(x.toString()+" ");
+		System.out.println();
 		System.out.println("Proporcjonalny: "+err(p.procesy));
+		for(Proces x:p.procesy)
+			System.out.print(x.toString()+" ");
+		System.out.println();
 		System.out.println("Sterowany: "+err(s.procesy));
-		// System.out.println("Strefowy: "+err(ss.procesy));
+		for(Proces x:s.procesy)
+			System.out.print(x.toString()+" ");
+		// System.out.println();
+		// System.out.println("Strefowy: "+err(ss.procesy)+"\n");
+		// for(Proces x:ss.procesy)
+		// System.out.print(x.toString()+" ");
 	}
 }

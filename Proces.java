@@ -17,10 +17,10 @@ public class Proces implements Comparable<Proces>{
 			// 90/9/1 lokalne/skoki-lokalne/skoki-globalne
 			// tutaj dla wzbogacenia zrobiłem 70/25/5
 			int rodzaj=(int)(Math.random()*100);
-			if(rodzaj>10)
+			if(rodzaj>25)
 				arr.add(arr.get(i-1)+(int)(Math.random()*4)-1);
 			// lokalne +[-1,2]
-			else if(rodzaj>1)
+			else if(rodzaj>5)
 				arr.add((int)(Math.random()*8)-3);
 			// skok lokalny +[-3,+5]
 			else
@@ -48,6 +48,10 @@ public class Proces implements Comparable<Proces>{
 		// jeśli zmniejszamy, to usuwamy z pamięci nadmiarowe ramki
 		for(int i=ramki;i<cpu.ramki.size();i++)
 			cpu.ramki.remove(ramki);
-	return n;
-	}	
+		return n;
+	}
+
+	public String toString(){
+		return cpu.toString();
+	}
 }
