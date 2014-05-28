@@ -11,6 +11,8 @@ public class Main{
 	}
 
 	public static void main(String[] args){
+		System.out.println("(dzięki mocniejszemu rozrzutowi przy generowaniu,\n
+			odwołania są porównywalne do generowanych przez kilka procesów\n)");
 		Scanner sc=new Scanner(System.in);
 		System.out.println("Podaj liczbę ramek");
 		int ramki=sc.nextInt();
